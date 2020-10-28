@@ -307,15 +307,11 @@ public extension IQKeyboardManager {
                     startingContentInsets = scrollView.contentInset
                     startingContentOffset = scrollView.contentOffset
 
-                    #if swift(>=5.1)
                     if #available(iOS 11.1, *) {
                         startingScrollIndicatorInsets = scrollView.verticalScrollIndicatorInsets
                     } else {
                         startingScrollIndicatorInsets = scrollView.scrollIndicatorInsets
                     }
-                    #else
-                    _startingScrollIndicatorInsets = scrollView.scrollIndicatorInsets
-                    #endif
                 }
 
                 showLog("Saving ScrollView New contentInset: \(startingContentInsets) and contentOffset: \(startingContentOffset)")
@@ -326,15 +322,11 @@ public extension IQKeyboardManager {
             startingContentInsets = unwrappedSuperScrollView.contentInset
             startingContentOffset = unwrappedSuperScrollView.contentOffset
 
-            #if swift(>=5.1)
             if #available(iOS 11.1, *) {
                 startingScrollIndicatorInsets = unwrappedSuperScrollView.verticalScrollIndicatorInsets
             } else {
                 startingScrollIndicatorInsets = unwrappedSuperScrollView.scrollIndicatorInsets
             }
-            #else
-            _startingScrollIndicatorInsets = unwrappedSuperScrollView.scrollIndicatorInsets
-            #endif
 
             showLog("Saving ScrollView contentInset: \(startingContentInsets) and contentOffset: \(startingContentOffset)")
         }
